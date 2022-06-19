@@ -57,6 +57,10 @@ int slow = arr[0];
     }
     return slow;
 ```
+Intuition: 
+
+![image](https://user-images.githubusercontent.com/101473861/174475595-f5fa4f6c-872b-4c17-881f-b31bf692f72b.png)
+
 
 Time - o(N)
 space - o(1)
