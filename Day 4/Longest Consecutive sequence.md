@@ -4,10 +4,18 @@
 
 Sort the arrya and run a for loop to find the longest consecutive sequence.
 
-Time - o(N*logN) </br>
+Time - o(N*logN) + O(N) </br>
 Space - o(1)
 
 ### Approach 2: Optimal - using hash set
+
+- Insert all the elements into the hash set
+- linearly iterate over the array and check, (currentNo - 1) exist in the hash set or not
+- If exist - do nothing
+- else check for (currentNo + 1) untill exist and count the length.
+
+Reason for checking the (currentNo - 1) exists or not is that, we means to start with the minimal no, if we have a sequence and start with a minimal no
+that we did not want (currentNo - 1) because we are starting with the minimal no.
 
  ```c++
  #include <bits/stdc++.h> 
@@ -38,4 +46,4 @@ int lengthOfLongestConsecutiveSequence(vector<int> &arr, int n) {
  ```
  
  Time - o(N) </br>
- Space - O(1)
+ Space - O(N)
