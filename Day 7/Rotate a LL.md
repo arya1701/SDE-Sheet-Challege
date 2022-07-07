@@ -50,8 +50,8 @@ Node *rotate(Node *head, int k) {
         }
         
         curr->next = head;
-        k = k % len;
-        k = len - k;
+        k = k % len; // no of times will do rotation
+        k = len - k; // cut the link and point to the null
         while(k--)
             curr = curr->next;
         
