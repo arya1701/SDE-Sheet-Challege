@@ -1,7 +1,8 @@
 ## Return the minimum no of railway station so that no train is kept waiting.
 
 ### Approach 1:
-
+- Sort the arrival time and destination time in ascending order because the arrival time matter to us. Simple, if the train is arriving then it take a platform else empty.
+- if two having the same descending time, then take the first one.
 
 ```c++
 int calculateMinPatforms(int at[], int dt[], int n) {
