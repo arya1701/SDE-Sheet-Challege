@@ -28,3 +28,42 @@ vector<int> KMostFrequent(int n, int k, vector<int> &arr)
     return ans;
 }
 ```
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+class pqueue{
+    public:
+        int freq;
+        int ele;
+};
+struct comp{
+    bool operator()(pqueue a, pqueue b){
+        return a.freq < b.freq;
+    }
+};
+
+vector<int> KMostFrequent(int n, int k, vector<int> &arr)
+{
+    // Write your code here.
+    
+    vector<int> ans;
+    priority_queue<pqueue,vector<pqueue>,comp> pq;
+    
+   unordered_map<int,int> mp;
+    
+    for(int i = 0;i<n; i++)
+        mp[arr[i]]++;
+    for(auto x: mp){
+        pq.push({x.second, x.first});
+    }
+    while(ans.size() != k){
+        pqueue temp = pq.top();
+        int elem = temp.ele;
+        int elefreq = temp.freq;
+        ans.push_back(elem);
+        pq.pop();
+    }
+    sort(ans.begin(),ans.end());
+    return ans;
+}
+```
