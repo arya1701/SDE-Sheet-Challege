@@ -28,13 +28,14 @@ vector<int> KMostFrequent(int n, int k, vector<int> &arr)
     return ans;
 }
 ```
+### Another way
 ```c++
 #include<bits/stdc++.h>
 using namespace std;
 class pqueue{
     public:
-        int freq;
-        int ele;
+        int ele; //key
+        int freq; // val
 };
 struct comp{
     bool operator()(pqueue a, pqueue b){
@@ -54,7 +55,7 @@ vector<int> KMostFrequent(int n, int k, vector<int> &arr)
     for(int i = 0;i<n; i++)
         mp[arr[i]]++;
     for(auto x: mp){
-        pq.push({x.second, x.first});
+        pq.push({x.first, x.second});
     }
     while(ans.size() != k){
         pqueue temp = pq.top();
