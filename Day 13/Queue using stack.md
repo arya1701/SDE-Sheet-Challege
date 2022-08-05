@@ -54,6 +54,7 @@ class Queue {
     
     public:
     stack<int> s1,s2;
+    // consider s2 as input and s2 as output
     Queue() {
     }
 
